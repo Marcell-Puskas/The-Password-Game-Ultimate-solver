@@ -10,12 +10,3 @@ body {
 div {
     padding: 10px 20px;
 }
-
-#country-list {
-    display: none;
-    font-size: 0.6rem;
-}
-
-#country-section:has(#show-countries:checked) #country-list {
-    display: block;
-}
