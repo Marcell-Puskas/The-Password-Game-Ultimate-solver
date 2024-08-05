@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The password game ultimate solver</title>
     <link rel="stylesheet" href="solver.css" />
-  </head>
-  <body>
-    <div>
-      <h2>initial paste</h2>
-      <p id="initial-paste"></p>
-    </div>
+</head>
+<body>
+    <div class="boxes">
+        <div class="box">
+            <span class="box-header">initial paste</span>
+            <div class="box-content">
+                <p id="initial-paste"></p>
+            </div>
+        </div>
 
-    <div id="country-section">
-      <h2>Solve country</h2>
-      <button id="countrypaste">Paste chessboard</button>
-      <p id="country-name"></p>
-    </div>
+        <div class="box">
+            <span class="box-header">Solve country</span>
+            <div class="box-content">
+                <button id="countrypaste">Paste chessboard</button>
+                <p id="country-name"></p>
+            </div>
+        </div>
 
-    <div>
-      <h2>Solve chess</h2>
-      <button id="chesspaste">Paste chessboard</button>
-      <p id="chess-move"></p>
+        <div class="box">
+            <span class="box-header">Solve chess</span>
+            <div class="box-content">
+                <button id="chesspaste">Paste chessboard</button>
+                <p id="chess-move"></p>
+            </div>
+        </div>
     </div>
 
     <script src="solver.js"></script>
-  </body>
+</body>
 </html>
