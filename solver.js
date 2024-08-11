@@ -150,3 +150,45 @@ function addDigits() {
 }
 digitsBox.addEventListener("input", addDigits)
 
+
+const elementsList = ["H","He","Li","Be","B","C","N","O","F","Ne","Na","Mg","Al","Si","P","S","Cl","Ar","K","Ca","Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn","Ga","Ge","As","Se","Br","Kr","Rb","Sr","Y","Zr","Nb","Mo","Tc","Ru","Rh","Pd","Ag","Cd","In","Sn","Sb","Te","I","Xe","Cs","Ba","La","Ce","Pr","Nd","Pm","Sm","Eu","Gd","Tb","Dy","Ho","Er","Tm","Yb","Lu","Hf","Ta","W","Re","Os","Ir","Pt","Au","Hg","Tl","Pb","Bi","Po","At","Rn","Fr","Ra","Ac","Th","Pa","U","Np","Pu","Am","Cm","Bk","Cf","Es","Fm","Md","No","Lr","Rf","Db","Sg","Bh","Hs","Mt","Ds","Rg","Cn","Nh","Fl","Mc","Lv","Ts","Og"]
+
+function countAndShowElement(presentElements) {
+    var elementsSum = 0
+    var tbody = ""
+    presentElements.forEach(element => {
+        let elementIndex = elementsList.indexOf(element);
+        elementsSum += elementIndex + 1;
+        tbody += `<tr><td>${element}</td><td>${elementIndex + 1}</td></tr>`
+    });
+
+    return [elementsSum, tbody]
+}
+
+function calculateRequiredElements(sum) {
+    var required = 200 - sum;
+    var requiredElements = []
+    while(required > 0) {
+        let elementNumber = 0
+        if(required > elementsList.length) elementNumber = elementsList.length;
+        else elementNumber = required;
+        requiredElements.push(elementsList[elementNumber - 1]);
+        required -= elementNumber
+    }
+    return requiredElements
+}
+
+function countElements() {
+    const text = document.getElementById("elements-input").value
+
+    const regex = new RegExp(`(${elementsList.toSorted((a, b) => b.length - a.length).join('|')})`, 'g');
+    const foundElements = text.match(regex)
+
+    let [sum, tbody] = countAndShowElement(foundElements)
+    document.getElementById("elements-results").innerHTML = tbody
+    document.getElementById("elements-total").textContent = sum
+
+    document.getElementById("elements-add").textContent = calculateRequiredElements(sum).join("")
+}
+
+document.getElementById("elements-search").addEventListener("click", countElements)

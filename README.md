@@ -1,7 +1,18 @@
 # TODO
-- [ ] number calculator
-- [ ] element calculator
+- rules
+    - [x] number calculator
+    - [x] element calculator
+    - [ ] video finder
+    - [ ] check free letters
+    - [ ] color picker
+- [ ] credits
+- text formating
+    - [ ] bold
+    - [ ] italic
+    - [ ] wingdings
+    - [ ] times new roman
+    - [ ] font as square of digits
+    - [ ] same letters different sizes
 - [ ] finish style
-- [ ] resizer
-- [ ] font and weight optimiser
-- [ ] 
+- [ ] fix moon phase
+- [ ] copy
