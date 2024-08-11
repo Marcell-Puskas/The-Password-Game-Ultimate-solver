@@ -98,7 +98,7 @@ async function getCountryName() {
 
     const country = countryList.find((c) => (c.embed === url))
     if(country)
-        countryElement.textContent = country.title
+        countryElement.textContent = country.title.toLowerCase()
     else
         countryElement.textContent = "Country not found!"
 }
@@ -132,3 +132,21 @@ async function getPuzzleNumber() {
 }
 
 document.getElementById("chesspaste").addEventListener("click", getPuzzleNumber)
+
+const digitsBox = document.getElementById("digits-input")
+function addDigits() {
+    const text = digitsBox.value
+    
+    const digits = text.match(/\d/g)
+    if(!digits) {
+    document.getElementById("digits-results").textContent = ''
+        return
+    }
+
+    const sum = digits.reduce((accumulator, currentValue) => accumulator + Number(currentValue), 0);
+
+    document.getElementById("digits-results").textContent = `The sum of the digits are: ${sum}\n
+    ${sum === 25 ? "no need to change any numbers" : sum < 25 ? `you need to add ${25-sum}` : `you need to subtract ${sum-25}`}`
+}
+digitsBox.addEventListener("input", addDigits)
+
