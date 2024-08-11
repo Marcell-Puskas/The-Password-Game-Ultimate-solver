@@ -43,7 +43,7 @@ function getMoonPhase() {
     let month = date.getMonth() + 1;
     let day = date.getDate();
 
-    let c = e = jd = b = 0;
+    let c = 0, e = 0, jd = 0, b = 0;
 
     if (month < 3) {
     year--;
