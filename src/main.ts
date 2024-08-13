@@ -4,6 +4,7 @@ import { getCountryName } from "./countries"
 import { getChessMove } from "./chess"
 import { getDigitsText } from "./digits"
 import { getElementsFromInput, getRequiredElementSymbols } from "./periodic-table"
+import { getYtUrls } from "./yt-url"
 
 
 
@@ -74,3 +75,38 @@ function countElements() {
 }
 const elementsSearch = document.getElementById("elements-search");
 if (elementsSearch) elementsSearch.addEventListener("click", countElements);
+
+
+
+const ytMinutes = document.getElementById("yt-minutes") as HTMLInputElement
+const ytSeconds = document.getElementById("yt-seconds") as HTMLInputElement
+const ytElements = document.getElementById("yt-elements") as HTMLInputElement
+const ytResults = document.getElementById("yt-results")
+
+function setYtResults() {
+    if(!ytMinutes || !ytSeconds || !ytResults || !ytElements) throw new ReferenceError("YT selector(s) failed");
+
+    const minutes = parseInt(ytMinutes.value)
+    const seconds = parseInt(ytSeconds.value)
+
+    if(Number.isNaN(minutes) || Number.isNaN(seconds)) {
+        ytResults.innerText = "";
+        return;
+    }
+
+    const ytUrl = getYtUrls(minutes, seconds)
+    if(!ytUrl) {
+        ytResults.innerText = "No url found.";
+        return;
+    }
+
+    const showElements = ytElements.checked;
+
+    ytResults.innerText = "youtu.be/"  + ytUrl.url + (showElements ? ytUrl.element : "");
+}
+
+if(ytMinutes && ytSeconds && ytElements) {
+    ytMinutes.addEventListener("input", setYtResults)
+    ytSeconds.addEventListener("input", setYtResults)
+    ytElements.addEventListener("input", setYtResults)
+}

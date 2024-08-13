@@ -4,6 +4,17 @@
     box-sizing: border-box;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 html, body {
     height: 100%;
 }
@@ -85,6 +96,10 @@ input:focus {
     border-color: #000;
 }
 
+input:out-of-range, input:invalid {
+    background-color: #ffc7c7;
+}
+
 button {
     background: #fff;
     font-size: 16px;
@@ -97,4 +112,10 @@ button {
     color: #000;
     animation: showButton-56b284df .4s ease-in-out forwards;
     touch-action: manipulation;
+}
+
+.content-row {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
 }

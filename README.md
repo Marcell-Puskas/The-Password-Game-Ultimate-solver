@@ -2,7 +2,11 @@
 - rules
     - [x] number calculator
     - [x] element calculator
-    - [ ] video finder
+        - [ ] exclude roman numeral elements
+    - [x] video finder
+        - [x] info about additional elements
+        - [x] input field error highlight
+        - [x] errors if selector is null
     - [ ] check free letters
     - [ ] color picker
 - [ ] credits

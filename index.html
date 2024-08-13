@@ -57,6 +57,24 @@
             <input class="password-box-content" id="digits-input">
             <p id="digits-results"></p>
         </div>
+
+        <div class="rule-box">
+            <span class="rule-box-header">Find YouTube video</span>
+            <div class="rule-box-content">
+                <div class="content-row">
+                    URL of a 
+                    <input type="number" min="3" max="36" id="yt-minutes" />
+                    minute
+                    <input type="number" min="0" max="60" id="yt-seconds" />
+                    second long YouTube video.
+                </div>
+                <div class="content-row">
+                    <input type="checkbox" id="yt-elements">
+                    <label for="yt-elements">show <abbr title="The added elements complement the elements present in the URL and the V element in the roman numeral section">complementary elements</abbr></label>
+                </div>
+                <p id="yt-results"></p>
+            </div>
+        </div>
     </div>
 
     <script type="module" src="src/main.ts"></script>
