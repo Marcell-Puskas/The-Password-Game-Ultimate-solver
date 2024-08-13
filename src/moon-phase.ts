@@ -1,37 +1,28 @@
-const moonPhases = [
-    "🌑", //New
-    "🌒", //Waxing Crescent
-    "🌓", //First Quarter
-    "🌔", //Waxing Gibbous
-    "🌕", //Full
-    "🌖", //Waning Gibbous
-    "🌗", //Last Quarter
-    "🌘", //Waning Crescent
-];
+import { getMoonIllumination } from "suncalc";
+import { DateTime } from "luxon";
 
-export function getMoonPhase() {
-    const date = new Date();
+export function getMoonEmoji() {
+    var startOfDay = DateTime.now().setZone('America/New_York').startOf('day').toJSDate();
+    var endOfDay = DateTime.now().setZone('America/New_York').startOf('day').plus({
+        days: 1
+    }).toJSDate();
 
-    let year = date.getFullYear();
-    let month = date.getMonth() + 1;
-    let day = date.getDate();
-
-    let c = 0, e = 0, jd = 0, b = 0;
-
-    if (month < 3) {
-    year--;
-    month += 12;
-    }
-
-    ++month;
-    c = 365.25 * year;
-    e = 30.6 * month;
-    jd = c + e + day - 694039.09; // jd is total days elapsed
-    jd /= 29.5305882; // divide by the moon cycle
-    b = Math.round(jd); // int(jd) -> b, take integer part of jd
-    jd -= b; // subtract integer part to leave fractional part of original jd
-    b = Math.round(jd * 8); // scale fraction from 0-8 and round
-
-    if (b >= 8) b = 0; // 0 and 8 are the same so turn 8 into 0
-    return moonPhases[b];
+    var startOfDayPhase = getMoonIllumination(startOfDay).phase,
+        endOfDayPhase = getMoonIllumination(endOfDay).phase;
+    var emojis = (startOfDayPhase <= 0.25 && endOfDayPhase >= 0.25
+        ? ["🌓", "🌗", "🌛", "🌜"]
+        : startOfDayPhase <= 0.5 && endOfDayPhase >= 0.5
+        ? ["🌕", "🌝"]
+        : startOfDayPhase <= 0.75 && endOfDayPhase >= 0.75
+        ? ["🌓", "🌗", "🌛", "🌜"]
+        : startOfDayPhase >= endOfDayPhase
+        ? ["🌑", "🌚"]
+        : startOfDayPhase <= 0.25
+        ? ["🌒", "🌘"]
+        : startOfDayPhase <= 0.5 || startOfDayPhase <= 0.75
+        ? ["🌔", "🌖"]
+        : ["🌒", "🌘"]
+    );
+    
+    return emojis[0]
 }

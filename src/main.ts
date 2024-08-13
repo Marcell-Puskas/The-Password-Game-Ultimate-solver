@@ -1,5 +1,5 @@
 import { getWordleAnswser } from "./wordle"
-import { getMoonPhase } from "./moon-phase"
+import { getMoonEmoji } from "./moon-phase"
 import { getCountryName } from "./countries"
 import { getChessMove } from "./chess"
 import { getDigitsText } from "./digits"
@@ -8,7 +8,7 @@ import { getElementsFromInput, getRequiredElementSymbols } from "./periodic-tabl
 
 
 async function setInitialPaste() {
-    let moonPhase = getMoonPhase()
+    let moonPhase = getMoonEmoji()
     let wordleAnswer = await getWordleAnswser()
 
     let initialText = `🥚🐛🐛🐛🐛🐛🐛${moonPhase}🏋️‍♂️🏋️‍♂️🏋️‍♂️.......101:00XXXV${wordleAnswer}shellomayiamlovedyoutu.be/EsPt995....`

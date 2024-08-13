@@ -14,5 +14,5 @@
     - [ ] font as square of digits
     - [ ] same letters different sizes
 - [ ] finish style
-- [ ] fix moon phase
+- [x] fix moon phase
 - [ ] copy
