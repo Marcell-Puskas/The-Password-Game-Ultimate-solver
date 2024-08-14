@@ -1,7 +1,7 @@
 export function getDigitsText(input: string) {
     const digits = input.match(/\d/g)
     if (!digits) 
-        return ''
+        return 'There are no digits'
 
     const sum = digits.reduce((accumulator, currentValue) => accumulator + Number(currentValue), 0);
 

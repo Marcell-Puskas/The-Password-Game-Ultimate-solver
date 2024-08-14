@@ -9,13 +9,17 @@ import { getFreeLetters } from "./free-letters"
 
 
 
-async function setInitialPaste() {
-    let moonPhase = getMoonEmoji()
-    let wordleAnswer = await getWordleAnswser()
+const multiInput = document.getElementById("multi-input") as HTMLInputElement
 
-    let initialText = `🥚🐛🐛🐛🐛🐛🐛${moonPhase}🏋️‍♂️🏋️‍♂️🏋️‍♂️.......101:00XXXV${wordleAnswer}shellomayiamlovedyoutu.be/EsPt995....`
-    const initialPaste = document.getElementById("initial-paste");
-    if (initialPaste) initialPaste.innerText = initialText;
+async function setInitialPaste() {
+    let wordleAnswer = await getWordleAnswser()
+    let moonEmoji = getMoonEmoji()
+
+    const wordleElements = document.querySelectorAll(".wordle");
+    const moonEmojiElements = document.querySelectorAll(".moon-emoji");
+    
+    wordleElements.forEach((element) => element.textContent = wordleAnswer)
+    moonEmojiElements.forEach((element) => element.textContent = moonEmoji)
 }
 setInitialPaste()
 
@@ -23,8 +27,11 @@ setInitialPaste()
 
 function setCountryName() {
     getCountryName().then((result) => {
-        const countryElement = document.getElementById("country-name");
-        if (countryElement) countryElement.textContent = result;
+        const countryResult = document.getElementById("country-result");
+        const countryInfo = document.getElementById("country-result-info");
+        if (!countryResult || !countryInfo) throw new ReferenceError("country selector(s) failed")
+        countryResult.textContent = result.country;
+        countryInfo.textContent = result.info;
     })
 }
 const countryPaste = document.getElementById("countrypaste")
@@ -34,8 +41,11 @@ if (countryPaste) countryPaste.addEventListener("click", setCountryName)
 
 function setChessMove() {
     getChessMove().then((result) => {
-        const moveElement = document.getElementById("chess-move")
-        if (moveElement) moveElement.textContent = result;
+        const chessResult = document.getElementById("chess-result")
+        const chessInfo = document.getElementById("chess-result-info")
+        if (!chessResult || !chessInfo) throw new ReferenceError("chess selector(s) failed")
+        chessResult.textContent = result.move;
+        chessInfo.textContent = result.info;
     })
 }
 const chesspaste = document.getElementById("chesspaste")
@@ -43,21 +53,20 @@ if (chesspaste) chesspaste.addEventListener("click", setChessMove)
 
 
 
-const digitsInput = document.getElementById("digits-input")
 function setDigitsText() {
-    if (digitsInput instanceof HTMLInputElement == false) return;
-    const result = getDigitsText(digitsInput.value)
+    if (multiInput instanceof HTMLInputElement == false) return;
+    const result = getDigitsText(multiInput.value)
     const digitsResult = document.getElementById("digits-results")
     if (digitsResult) digitsResult.textContent = result
 }
-if (digitsInput) digitsInput.addEventListener("input", setDigitsText)
+setDigitsText()
+if (multiInput) multiInput.addEventListener("input", setDigitsText)
 
 
 
 function countElements() {
-    const elementsInput = document.getElementById("elements-input")
-    if (elementsInput instanceof HTMLInputElement == false) return;
-    const text = elementsInput.value
+    if (multiInput instanceof HTMLInputElement == false) return;
+    const text = multiInput.value
 
     let { elements, sum } = getElementsFromInput(text)
 
@@ -72,10 +81,14 @@ function countElements() {
     if (elementsTotal) elementsTotal.textContent = sum.toString()
 
     const elementsAdd = document.getElementById("elements-add");
-    if (elementsAdd) elementsAdd.textContent = getRequiredElementSymbols(sum).join("");
+    const requiredElements = getRequiredElementSymbols(sum)
+    if (!elementsAdd) throw new ReferenceError("elements-add selector failed");
+    
+    if (requiredElements.length > 0) elementsAdd.textContent = "Required elements: " + requiredElements.join("");
+    else elementsAdd.textContent = 200-sum ? "Present elements sum exceeds 200" : "No additional elements required";
 }
-const elementsSearch = document.getElementById("elements-search");
-if (elementsSearch) elementsSearch.addEventListener("click", countElements);
+countElements()
+if (multiInput) multiInput.addEventListener("input", countElements);
 
 
 
@@ -105,7 +118,7 @@ function setYtResults() {
 
     ytResults.innerText = "youtu.be/"  + ytUrl.url + (showElements ? ytUrl.element : "");
 }
-
+setYtResults()
 if(ytMinutes && ytSeconds && ytElements) {
     ytMinutes.addEventListener("input", setYtResults)
     ytSeconds.addEventListener("input", setYtResults)
@@ -114,12 +127,11 @@ if(ytMinutes && ytSeconds && ytElements) {
 
 
 
-const lettersInput = document.getElementById("letters-input") as HTMLInputElement
 function setFreeLetters() {
     const lettersResults = document.getElementById("letters-results")
     if (!lettersResults) throw new ReferenceError("letters-results selector failed");
 
-    const input = lettersInput.value
+    const input = multiInput.value
     const freeLetters = getFreeLetters(input)
 
     lettersResults.innerHTML = "";
@@ -128,4 +140,4 @@ function setFreeLetters() {
     })
 }
 setFreeLetters()
-if(lettersInput) lettersInput.addEventListener("input", setFreeLetters)
+if(multiInput) multiInput.addEventListener("input", setFreeLetters)
