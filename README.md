@@ -7,7 +7,7 @@
         - [x] info about additional elements
         - [x] input field error highlight
         - [x] errors if selector is null
-    - [ ] check free letters
+    - [x] check free letters
     - [ ] color picker
 - [ ] credits
 - text formating

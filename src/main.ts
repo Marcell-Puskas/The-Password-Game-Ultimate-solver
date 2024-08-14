@@ -5,6 +5,7 @@ import { getChessMove } from "./chess"
 import { getDigitsText } from "./digits"
 import { getElementsFromInput, getRequiredElementSymbols } from "./periodic-table"
 import { getYtUrls } from "./yt-url"
+import { getFreeLetters } from "./free-letters"
 
 
 
@@ -110,3 +111,21 @@ if(ytMinutes && ytSeconds && ytElements) {
     ytSeconds.addEventListener("input", setYtResults)
     ytElements.addEventListener("input", setYtResults)
 }
+
+
+
+const lettersInput = document.getElementById("letters-input") as HTMLInputElement
+function setFreeLetters() {
+    const lettersResults = document.getElementById("letters-results")
+    if (!lettersResults) throw new ReferenceError("letters-results selector failed");
+
+    const input = lettersInput.value
+    const freeLetters = getFreeLetters(input)
+
+    lettersResults.innerHTML = "";
+    freeLetters.forEach((letter) => {
+        lettersResults.innerHTML += `<div class="letter ${letter.free ? "" : "letter-taken"}">${letter.letter.toUpperCase()}<div>`
+    })
+}
+setFreeLetters()
+if(lettersInput) lettersInput.addEventListener("input", setFreeLetters)
