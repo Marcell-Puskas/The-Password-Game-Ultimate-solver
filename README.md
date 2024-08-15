@@ -16,7 +16,7 @@
     - [ ] font as square of digits
     - [ ] same letters different sizes
 - [ ] credits
-- [ ] finish style
-    - [ ] new colors
+- [x] finish style
+    - [x] new colors
 - [x] fix moon phase
 - [x] copy
