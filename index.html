@@ -15,9 +15,12 @@
                 <p>Today's wordle anwser: <span class="wordle"></span>
                 <p>Moon phase: <span class="moon-emoji"></span></p>
                 <p>initial paste</p>
-                <p>
-                    🥚🐛🐛🐛🐛🐛🐛<span class="moon-emoji"></span>🏋️‍♂️🏋️‍♂️🏋️‍♂️.......101:00XXXV<span class="wordle"></span>shellomayiamlovedyoutu.be/EsPt995....
-                </p>
+                <div class="text-box">
+                    <p>
+                        🥚🐛🐛🐛🐛🐛🐛<span class="moon-emoji"></span>🏋️‍♂️🏋️‍♂️🏋️‍♂️.......101:00XXXV<span class="wordle"></span>shellomayiamlovedyoutu.be/EsPt995....
+                    </p>
+                    <button class="copy-button"></button>
+                </div>
             </div>
         </div>
 
@@ -29,10 +32,16 @@
                         Select the google maps box and press paste.
                     </abbr>
                 </p>
+
                 <button id="countrypaste" style="align-self: center;">Paste</button>
-                <p>
-                    <span id="country-result-info"></span> <span id="country-result"></span>
-                </p>
+
+                <div class="content-row">
+                    <p id="country-result-info"></p> 
+                    <div class="text-box">
+                        <span id="country-result"></span>
+                        <button class="copy-button"></button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -41,9 +50,13 @@
             <div class="rule-box-content">
                 Select the chess image and press paste.
                 <button id="chesspaste" style="align-self: center;">Paste</button>
-                <p>
-                    <span id="chess-result-info"></span> <span id="chess-result"></span>
-                </p>
+                <div class="content-row">
+                    <p id="chess-result-info"></p> 
+                    <div class="text-box">
+                        <span id="chess-result"></span>
+                        <button class="copy-button"></button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -61,7 +74,12 @@
                     <input type="checkbox" id="yt-elements">
                     <label for="yt-elements">show <abbr title="The added elements complement the elements present in the URL and the V element in the roman numeral section">complementary elements</abbr></label>
                 </div>
-                <p id="yt-results"></p>
+
+                <p id="chess-result-info"></p> 
+                <div class="text-box">
+                    <span id="yt-result"></span>
+                    <button class="copy-button"></button>
+                </div>
             </div>
         </div>
     </div>
@@ -95,7 +113,13 @@
                         </tr>
                     </tfoot>
                 </table>
-                <p id="elements-add"></p>
+                <div class="content-row">
+                    <p id="required-elements-info"></p> 
+                    <div class="text-box">
+                        <span id="required-elements-results"></span>
+                        <button class="copy-button"></button>
+                    </div>
+                </div>
             </div>
         </div>
 

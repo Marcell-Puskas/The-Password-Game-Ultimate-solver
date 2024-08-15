@@ -76,16 +76,26 @@ function countElements() {
     });
 
     const elementsResults = document.getElementById("elements-results");
-    if (elementsResults) elementsResults.innerHTML = tbody;
     const elementsTotal = document.getElementById("elements-total");
-    if (elementsTotal) elementsTotal.textContent = sum.toString()
+    const requiredElementInfo = document.getElementById("required-elements-info");
+    const requiredElementResults = document.getElementById("required-elements-results");
+    if (!elementsResults || !elementsTotal || !requiredElementInfo || !requiredElementResults)
+        throw new ReferenceError("elements-add selector failed");
 
-    const elementsAdd = document.getElementById("elements-add");
+    elementsResults.innerHTML = tbody;
+    elementsTotal.textContent = sum.toString()
+
     const requiredElements = getRequiredElementSymbols(sum)
-    if (!elementsAdd) throw new ReferenceError("elements-add selector failed");
-    
-    if (requiredElements.length > 0) elementsAdd.textContent = "Required elements: " + requiredElements.join("");
-    else elementsAdd.textContent = 200-sum ? "Present elements sum exceeds 200" : "No additional elements required";
+
+    if (requiredElements.length > 0) {
+        requiredElementInfo.textContent = "Required elements: "
+        requiredElementResults.textContent = requiredElements.join("");
+    }
+
+    else {
+        requiredElementInfo.textContent = 200-sum ? "Present elements sum exceeds 200" : "No additional elements required";
+        requiredElementResults.textContent = "";
+    }
 }
 countElements()
 if (multiInput) multiInput.addEventListener("input", countElements);
@@ -95,7 +105,7 @@ if (multiInput) multiInput.addEventListener("input", countElements);
 const ytMinutes = document.getElementById("yt-minutes") as HTMLInputElement
 const ytSeconds = document.getElementById("yt-seconds") as HTMLInputElement
 const ytElements = document.getElementById("yt-elements") as HTMLInputElement
-const ytResults = document.getElementById("yt-results")
+const ytResults = document.getElementById("yt-result")
 
 function setYtResults() {
     if(!ytMinutes || !ytSeconds || !ytResults || !ytElements) throw new ReferenceError("YT selector(s) failed");
@@ -140,4 +150,16 @@ function setFreeLetters() {
     })
 }
 setFreeLetters()
-if(multiInput) multiInput.addEventListener("input", setFreeLetters)
+if(multiInput) multiInput.addEventListener("input", setFreeLetters);
+
+
+const copyButtons = document.querySelectorAll(".copy-button")
+copyButtons.forEach((button) => 
+    button.addEventListener("click", () => {
+        button.classList.toggle("pressed");
+        setTimeout(() => button.classList.remove("pressed"), 1000);
+
+        const text = button.parentElement?.innerText;
+        if(text) navigator.clipboard.writeText(text);
+    })
+)

@@ -70,14 +70,13 @@ body {
     gap: 8px;
 }
 
-input {
+input, .text-box {
     padding: 5px 11px;
     font-size: 16px;
     border-radius: 10px;
     background: #fff;
     border: 1px solid transparent;
     font-family: monospace;
-    white-space: break-spaces;
     word-wrap: break-word;
     border: 1px solid #9d9d9d;
     overflow: hidden;
@@ -93,7 +92,7 @@ input {
     font-size: 28px;
 }
 
-input:focus {
+input:focus, button:hover {
     border-color: #000;
 }
 
@@ -119,6 +118,7 @@ button {
     display: flex;
     gap: 5px;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 #yt-minutes, #yt-seconds {
@@ -176,4 +176,36 @@ tbody > tr:last-child {
 td, th {
     padding: 0 4px;
     text-align: right;
+}
+
+.text-box {
+    justify-content: end;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.text-box:has(*:first-child:empty) {
+    display: none !important;
+}
+
+.copy-button {
+    align-self: flex-end;
+    width: 25px;
+    height: 25px;
+    background: no-repeat center url("data/copy.svg");
+    background-size: 80%;
+    transition: 250ms ease-in-out;
+}
+
+/* .text-box:hover .copy-button {
+    opacity: 0.5;
+}
+
+.copy-button:hover {
+    opacity: 1 !important;
+} */
+
+.copy-button.pressed {
+    background: no-repeat center url("data/check.svg");
 }

@@ -19,4 +19,4 @@
     - [ ] same letters different sizes
 - [ ] finish style
 - [x] fix moon phase
-- [ ] copy
+- [x] copy
