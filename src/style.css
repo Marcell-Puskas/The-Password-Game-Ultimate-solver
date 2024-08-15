@@ -16,11 +16,11 @@ input[type=number] {
 }
 
 html, body {
-    height: 100%;
+    min-height: 100%;
 }
 
 body {
-    padding: 22px;
+    padding: 44px;
     background-color: hsl(126, 100%, 96%) !important;
     display: flex;
     justify-content: center;
@@ -70,7 +70,7 @@ body {
     gap: 8px;
 }
 
-input, .text-box {
+input, .text-box, .copy-box {
     padding: 5px 11px;
     font-size: 16px;
     border-radius: 10px;
@@ -116,7 +116,7 @@ button {
 
 .content-row {
     display: flex;
-    gap: 5px;
+    gap: 10px;
     flex-wrap: wrap;
     align-items: center;
 }
@@ -178,14 +178,14 @@ td, th {
     text-align: right;
 }
 
-.text-box {
+.copy-box {
     justify-content: end;
     display: flex;
     flex-wrap: wrap;
     gap: 7px;
 }
 
-.text-box:has(*:first-child:empty) {
+.copy-box:has(*:first-child:empty) {
     display: none !important;
 }
 
@@ -198,14 +198,11 @@ td, th {
     transition: 250ms ease-in-out;
 }
 
-/* .text-box:hover .copy-button {
-    opacity: 0.5;
-}
-
-.copy-button:hover {
-    opacity: 1 !important;
-} */
-
 .copy-button.pressed {
     background: no-repeat center url("data/check.svg");
+}
+
+textarea {
+    width: 100%;
+    resize: none;
 }

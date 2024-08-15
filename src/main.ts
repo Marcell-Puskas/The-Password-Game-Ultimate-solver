@@ -54,7 +54,6 @@ if (chesspaste) chesspaste.addEventListener("click", setChessMove)
 
 
 function setDigitsText() {
-    if (multiInput instanceof HTMLInputElement == false) return;
     const result = getDigitsText(multiInput.value)
     const digitsResult = document.getElementById("digits-results")
     if (digitsResult) digitsResult.textContent = result
@@ -65,7 +64,6 @@ if (multiInput) multiInput.addEventListener("input", setDigitsText)
 
 
 function countElements() {
-    if (multiInput instanceof HTMLInputElement == false) return;
     const text = multiInput.value
 
     let { elements, sum } = getElementsFromInput(text)
@@ -153,6 +151,7 @@ setFreeLetters()
 if(multiInput) multiInput.addEventListener("input", setFreeLetters);
 
 
+
 const copyButtons = document.querySelectorAll(".copy-button")
 copyButtons.forEach((button) => 
     button.addEventListener("click", () => {
@@ -163,3 +162,15 @@ copyButtons.forEach((button) =>
         if(text) navigator.clipboard.writeText(text);
     })
 )
+
+
+
+var textareas = document.querySelectorAll('textarea');
+textareas.forEach((textarea) => {
+    const resize = () => {
+        textarea.style.height = "0";
+        textarea.style.height = textarea.scrollHeight + 'px';
+    }
+    resize()
+    textarea.addEventListener("input", resize)
+});
