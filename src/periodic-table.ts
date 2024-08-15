@@ -15,7 +15,7 @@ export function getElementsFromInput(input: string) {
         elements.forEach((element) => {
             input = input.replaceAll(element.symbol, () => {
                 foundElements.push(element);
-                return atomicNumbersSum += parseInt(element.num), ''
+                return atomicNumbersSum += element.num, ''
             })
         })
     })
@@ -29,13 +29,25 @@ export function getElementsFromInput(input: string) {
 export function getRequiredElementSymbols(sum: number) {
     var required = 200 - sum;
     var requiredElementSymbols: string[] = []
+    
+    const disallowedCharactersRegex = new RegExp(`(I|V|X|L|C|D|M)`)
+
+    const allowedElements = periodicElementsList.filter((element) => 
+        !element.symbol.match(disallowedCharactersRegex)
+    )
 
     while(required > 0) {
-        let elementNumber = 0
-        if (required > periodicElementsList.length) elementNumber = periodicElementsList.length;
-        else elementNumber = required;
-        requiredElementSymbols.push(periodicElementsList[elementNumber - 1].symbol);
-        required -= elementNumber
+        var foundElement = allowedElements[0]
+
+        allowedElements.forEach((element) => {
+            if (element.num > foundElement.num && element.num <= required) {
+                foundElement = element
+            }
+        })
+
+        requiredElementSymbols.push(foundElement.symbol);
+
+        required -= foundElement.num
     }
     return requiredElementSymbols
 }

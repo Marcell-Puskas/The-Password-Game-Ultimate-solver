@@ -1,474 +1,474 @@
 export const periodicElementsList = [
   {
-    num: "1",
+    num: 1,
     symbol: "H",
   },
   {
-    num: "2",
+    num: 2,
     symbol: "He",
   },
   {
-    num: "3",
+    num: 3,
     symbol: "Li",
   },
   {
-    num: "4",
+    num: 4,
     symbol: "Be",
   },
   {
-    num: "5",
+    num: 5,
     symbol: "B",
   },
   {
-    num: "6",
+    num: 6,
     symbol: "C",
   },
   {
-    num: "7",
+    num: 7,
     symbol: "N",
   },
   {
-    num: "8",
+    num: 8,
     symbol: "O",
   },
   {
-    num: "9",
+    num: 9,
     symbol: "F",
   },
   {
-    num: "10",
+    num: 10,
     symbol: "Ne",
   },
   {
-    num: "11",
+    num: 11,
     symbol: "Na",
   },
   {
-    num: "12",
+    num: 12,
     symbol: "Mg",
   },
   {
-    num: "13",
+    num: 13,
     symbol: "Al",
   },
   {
-    num: "14",
+    num: 14,
     symbol: "Si",
   },
   {
-    num: "15",
+    num: 15,
     symbol: "P",
   },
   {
-    num: "16",
+    num: 16,
     symbol: "S",
   },
   {
-    num: "17",
+    num: 17,
     symbol: "Cl",
   },
   {
-    num: "18",
+    num: 18,
     symbol: "Ar",
   },
   {
-    num: "19",
+    num: 19,
     symbol: "K",
   },
   {
-    num: "20",
+    num: 20,
     symbol: "Ca",
   },
   {
-    num: "21",
+    num: 21,
     symbol: "Sc",
   },
   {
-    num: "22",
+    num: 22,
     symbol: "Ti",
   },
   {
-    num: "23",
+    num: 23,
     symbol: "V",
   },
   {
-    num: "24",
+    num: 24,
     symbol: "Cr",
   },
   {
-    num: "25",
+    num: 25,
     symbol: "Mn",
   },
   {
-    num: "26",
+    num: 26,
     symbol: "Fe",
   },
   {
-    num: "27",
+    num: 27,
     symbol: "Co",
   },
   {
-    num: "28",
+    num: 28,
     symbol: "Ni",
   },
   {
-    num: "29",
+    num: 29,
     symbol: "Cu",
   },
   {
-    num: "30",
+    num: 30,
     symbol: "Zn",
   },
   {
-    num: "31",
+    num: 31,
     symbol: "Ga",
   },
   {
-    num: "32",
+    num: 32,
     symbol: "Ge",
   },
   {
-    num: "33",
+    num: 33,
     symbol: "As",
   },
   {
-    num: "34",
+    num: 34,
     symbol: "Se",
   },
   {
-    num: "35",
+    num: 35,
     symbol: "Br",
   },
   {
-    num: "36",
+    num: 36,
     symbol: "Kr",
   },
   {
-    num: "37",
+    num: 37,
     symbol: "Rb",
   },
   {
-    num: "38",
+    num: 38,
     symbol: "Sr",
   },
   {
-    num: "39",
+    num: 39,
     symbol: "Y",
   },
   {
-    num: "40",
+    num: 40,
     symbol: "Zr",
   },
   {
-    num: "41",
+    num: 41,
     symbol: "Nb",
   },
   {
-    num: "42",
+    num: 42,
     symbol: "Mo",
   },
   {
-    num: "43",
+    num: 43,
     symbol: "Tc",
   },
   {
-    num: "44",
+    num: 44,
     symbol: "Ru",
   },
   {
-    num: "45",
+    num: 45,
     symbol: "Rh",
   },
   {
-    num: "46",
+    num: 46,
     symbol: "Pd",
   },
   {
-    num: "47",
+    num: 47,
     symbol: "Ag",
   },
   {
-    num: "48",
+    num: 48,
     symbol: "Cd",
   },
   {
-    num: "49",
+    num: 49,
     symbol: "In",
   },
   {
-    num: "50",
+    num: 50,
     symbol: "Sn",
   },
   {
-    num: "51",
+    num: 51,
     symbol: "Sb",
   },
   {
-    num: "52",
+    num: 52,
     symbol: "Te",
   },
   {
-    num: "53",
+    num: 53,
     symbol: "I",
   },
   {
-    num: "54",
+    num: 54,
     symbol: "Xe",
   },
   {
-    num: "55",
+    num: 55,
     symbol: "Cs",
   },
   {
-    num: "56",
+    num: 56,
     symbol: "Ba",
   },
   {
-    num: "57",
+    num: 57,
     symbol: "La",
   },
   {
-    num: "58",
+    num: 58,
     symbol: "Ce",
   },
   {
-    num: "59",
+    num: 59,
     symbol: "Pr",
   },
   {
-    num: "60",
+    num: 60,
     symbol: "Nd",
   },
   {
-    num: "61",
+    num: 61,
     symbol: "Pm",
   },
   {
-    num: "62",
+    num: 62,
     symbol: "Sm",
   },
   {
-    num: "63",
+    num: 63,
     symbol: "Eu",
   },
   {
-    num: "64",
+    num: 64,
     symbol: "Gd",
   },
   {
-    num: "65",
+    num: 65,
     symbol: "Tb",
   },
   {
-    num: "66",
+    num: 66,
     symbol: "Dy",
   },
   {
-    num: "67",
+    num: 67,
     symbol: "Ho",
   },
   {
-    num: "68",
+    num: 68,
     symbol: "Er",
   },
   {
-    num: "69",
+    num: 69,
     symbol: "Tm",
   },
   {
-    num: "70",
+    num: 70,
     symbol: "Yb",
   },
   {
-    num: "71",
+    num: 71,
     symbol: "Lu",
   },
   {
-    num: "72",
+    num: 72,
     symbol: "Hf",
   },
   {
-    num: "73",
+    num: 73,
     symbol: "Ta",
   },
   {
-    num: "74",
+    num: 74,
     symbol: "W",
   },
   {
-    num: "75",
+    num: 75,
     symbol: "Re",
   },
   {
-    num: "76",
+    num: 76,
     symbol: "Os",
   },
   {
-    num: "77",
+    num: 77,
     symbol: "Ir",
   },
   {
-    num: "78",
+    num: 78,
     symbol: "Pt",
   },
   {
-    num: "79",
+    num: 79,
     symbol: "Au",
   },
   {
-    num: "80",
+    num: 80,
     symbol: "Hg",
   },
   {
-    num: "81",
+    num: 81,
     symbol: "Tl",
   },
   {
-    num: "82",
+    num: 82,
     symbol: "Pb",
   },
   {
-    num: "83",
+    num: 83,
     symbol: "Bi",
   },
   {
-    num: "84",
+    num: 84,
     symbol: "Po",
   },
   {
-    num: "85",
+    num: 85,
     symbol: "At",
   },
   {
-    num: "86",
+    num: 86,
     symbol: "Rn",
   },
   {
-    num: "87",
+    num: 87,
     symbol: "Fr",
   },
   {
-    num: "88",
+    num: 88,
     symbol: "Ra",
   },
   {
-    num: "89",
+    num: 89,
     symbol: "Ac",
   },
   {
-    num: "90",
+    num: 90,
     symbol: "Th",
   },
   {
-    num: "91",
+    num: 91,
     symbol: "Pa",
   },
   {
-    num: "92",
+    num: 92,
     symbol: "U",
   },
   {
-    num: "93",
+    num: 93,
     symbol: "Np",
   },
   {
-    num: "94",
+    num: 94,
     symbol: "Pu",
   },
   {
-    num: "95",
+    num: 95,
     symbol: "Am",
   },
   {
-    num: "96",
+    num: 96,
     symbol: "Cm",
   },
   {
-    num: "97",
+    num: 97,
     symbol: "Bk",
   },
   {
-    num: "98",
+    num: 98,
     symbol: "Cf",
   },
   {
-    num: "99",
+    num: 99,
     symbol: "Es",
   },
   {
-    num: "100",
+    num: 100,
     symbol: "Fm",
   },
   {
-    num: "101",
+    num: 101,
     symbol: "Md",
   },
   {
-    num: "102",
+    num: 102,
     symbol: "No",
   },
   {
-    num: "103",
+    num: 103,
     symbol: "Lr",
   },
   {
-    num: "104",
+    num: 104,
     symbol: "Rf",
   },
   {
-    num: "105",
+    num: 105,
     symbol: "Db",
   },
   {
-    num: "106",
+    num: 106,
     symbol: "Sg",
   },
   {
-    num: "107",
+    num: 107,
     symbol: "Bh",
   },
   {
-    num: "108",
+    num: 108,
     symbol: "Hs",
   },
   {
-    num: "109",
+    num: 109,
     symbol: "Mt",
   },
   {
-    num: "110",
+    num: 110,
     symbol: "Ds",
   },
   {
-    num: "111",
+    num: 111,
     symbol: "Rg",
   },
   {
-    num: "112",
+    num: 112,
     symbol: "Cn",
   },
   {
-    num: "113",
+    num: 113,
     symbol: "Nh",
   },
   {
-    num: "114",
+    num: 114,
     symbol: "Fl",
   },
   {
-    num: "115",
+    num: 115,
     symbol: "Mc",
   },
   {
-    num: "116",
+    num: 116,
     symbol: "Lv",
   },
   {
-    num: "117",
+    num: 117,
     symbol: "Ts",
   },
   {
-    num: "118",
+    num: 118,
     symbol: "Og",
   },
 ];

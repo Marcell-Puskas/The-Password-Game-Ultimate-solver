@@ -2,14 +2,12 @@
 - rules
     - [x] number calculator
     - [x] element calculator
-        - [ ] exclude roman numeral elements
+        - [x] exclude roman numeral elements
     - [x] video finder
         - [x] info about additional elements
         - [x] input field error highlight
         - [x] errors if selector is null
     - [x] check free letters
-    - [ ] color picker
-- [ ] credits
 - text formating
     - [ ] bold
     - [ ] italic
@@ -17,6 +15,8 @@
     - [ ] times new roman
     - [ ] font as square of digits
     - [ ] same letters different sizes
+- [ ] credits
 - [ ] finish style
+    - [ ] new colors
 - [x] fix moon phase
 - [x] copy
