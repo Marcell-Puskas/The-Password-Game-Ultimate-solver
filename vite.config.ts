@@ -3,4 +3,5 @@ import { viteSingleFile } from "vite-plugin-singlefile"
 
 export default defineConfig({
 	plugins: [viteSingleFile()],
+	base: '/the-password-game-ultimate-solver/'
 })
