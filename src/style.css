@@ -24,8 +24,29 @@ body {
     background-color: hsl(126, 100%, 96%) !important;
     display: flex;
     justify-content: center;
-    gap: 22px;
+    flex-direction: column;
+    gap: 44px;
     font-family: Arial,Helvetica,sans-serif;
+}
+
+.about {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.3rem;
+}
+
+.about a {
+    color: #000;
+}
+
+.about h1 {
+    font-weight: normal;
+}
+
+.columns {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
 }
 
 .boxes {
