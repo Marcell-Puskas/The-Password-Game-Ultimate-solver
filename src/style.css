@@ -20,7 +20,7 @@ html, body {
 }
 
 body {
-    padding: 44px;
+    padding: 44px 8px;
     background-color: hsl(126, 100%, 96%) !important;
     display: flex;
     justify-content: center;
@@ -47,6 +47,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 22px;
+    flex-wrap: wrap;
 }
 
 .boxes {
